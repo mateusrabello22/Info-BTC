@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap" />
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+    <title>Info BTC</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#shortcut">
+                <img class="logo" src="./assets/logo-btc.png" alt="Logo-Info-BTC" />
+            </a>
+            <nav class="nav-container">
+                <ul>
+                    <li><a href="#why-important">Por que importa?</a></li>
+                    <li><a href="#how-it-works">Como funciona?</a></li>
+                    <li><a href="#history">História</a></li>
+                    <li><a href="#Before-buying">Antes de comprar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container" id="shortcut">
+                <h1>Uma moeda que <strong>ninguém controla.</strong></h1>
+                <p>O Bitcoin é dinheiro digital que funciona
+                    sem banco central e sem intermediários.
+                    Milhares de computadores pelo mundo
+                    mantêm as mesmas regras, o tempo todo, e
+                    qualquer pessoa pode conferir.</p>
+                <div class="btn-group">
+                    <a class="btn-primary" href="#why-important">Importância do BTC</a>
+                    <a class="btn-secondary" href="https://bitcoin.org/bitcoin.pdf" target="_blank"
+                        rel="noopener noreferrer">Whitepaper original</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="importancia" class="importancia">
+            <div class="container">
+                <div class="demo">
+                    <div class="demo-head">
+                        <p>Desligue alguns nós nas duas redes e compare o que acontece.</p>
+                        <button class="btn-secondary" type="button" id="btnReligar">Religar todos os nós</button>
+                    </div>
+
+                    <div class="nets">
+                        <div class="net">
+                            <h3>Rede centralizada</h3>
+                            <p>Como a maioria dos serviços de pagamento: tudo passa por um centro.</p>
+                            <svg class="net-svg" viewBox="0 0 300 300" id="svg-central">
+                                <line x1="150" y1="150" x2="150" y2="40" class="edge-gray" data-from="hub"
+                                    data-to="c1" />
+                                <line x1="150" y1="150" x2="240" y2="90" class="edge-gray" data-from="hub"
+                                    data-to="c2" />
+                                <line x1="150" y1="150" x2="260" y2="180" class="edge-gray" data-from="hub"
+                                    data-to="c3" />
+                                <line x1="150" y1="150" x2="200" y2="260" class="edge-gray" data-from="hub"
+                                    data-to="c4" />
+                                <line x1="150" y1="150" x2="100" y2="260" class="edge-gray" data-from="hub"
+                                    data-to="c5" />
+                                <line x1="150" y1="150" x2="40" y2="180" class="edge-gray" data-from="hub"
+                                    data-to="c6" />
+                                <line x1="150" y1="150" x2="60" y2="90" class="edge-gray" data-from="hub"
+                                    data-to="c7" />
+
+                                <g class="no-hover" id="hub" data-node="hub">
+                                    <circle cx="150" cy="150" r="30" class="anel" />
+                                    <circle cx="150" cy="150" r="22" class="node node-hub" />
+                                </g>
+                                <g class="no-hover" id="c1" data-node="c1">
+                                    <circle cx="150" cy="40" r="21" class="anel" />
+                                    <circle cx="150" cy="40" r="13" class="node node-hub" />
+                                </g>
+                                <g class="no-hover" id="c2" data-node="c2">
+                                    <circle cx="240" cy="90" r="21" class="anel" />
+                                    <circle cx="240" cy="90" r="13" class="node node-hub" />
+                                </g>
+                                <g class="no-hover" id="c3" data-node="c3">
+                                    <circle cx="260" cy="180" r="21" class="anel" />
+                                    <circle cx="260" cy="180" r="13" class="node node-hub" />
+                                </g>
+                                <g class="no-hover" id="c4" data-node="c4">
+                                    <circle cx="200" cy="260" r="21" class="anel" />
+                                    <circle cx="200" cy="260" r="13" class="node node-hub" />
+                                </g>
+                                <g class="no-hover" id="c5" data-node="c5">
+                                    <circle cx="100" cy="260" r="21" class="anel" />
+                                    <circle cx="100" cy="260" r="13" class="node node-hub" />
+                                </g>
+                                <g class="no-hover" id="c6" data-node="c6">
+                                    <circle cx="40" cy="180" r="21" class="anel" />
+                                    <circle cx="40" cy="180" r="13" class="node node-hub" />
+                                </g>
+                                <g class="no-hover" id="c7" data-node="c7">
+                                    <circle cx="60" cy="90" r="21" class="anel" />
+                                    <circle cx="60" cy="90" r="13" class="node node-hub" />
+                                </g>
+                            </svg>
+                            <p class="net-status" id="status-central">Funcionando: 9 de 9 nós ativos
+                                se comunicam.</p>
+                        </div>
+
+                        <div class="net">
+                            <h3>Rede descentralizada</h3>
+                            <p>Como o Bitcoin: cada nó conversa com vários outros, sem centro.</p>
+                            <svg class="net-svg" viewBox="0 0 300 300" id="svg-mesh">
+                                <line x1="150" y1="40" x2="240" y2="90" class="edge" data-from="d1" data-to="d2" />
+                                <line x1="240" y1="90" x2="260" y2="180" class="edge" data-from="d2" data-to="d3" />
+                                <line x1="260" y1="180" x2="200" y2="260" class="edge" data-from="d3" data-to="d4" />
+                                <line x1="200" y1="260" x2="100" y2="260" class="edge" data-from="d4" data-to="d5" />
+                                <line x1="100" y1="260" x2="40" y2="180" class="edge" data-from="d5" data-to="d6" />
+                                <line x1="40" y1="180" x2="60" y2="90" class="edge" data-from="d6" data-to="d7" />
+                                <line x1="60" y1="90" x2="150" y2="40" class="edge" data-from="d7" data-to="d1" />
+
+                                <line x1="150" y1="40" x2="260" y2="180" class="edge" data-from="d1" data-to="d3" />
+                                <line x1="240" y1="90" x2="200" y2="260" class="edge" data-from="d2" data-to="d4" />
+                                <line x1="260" y1="180" x2="100" y2="260" class="edge" data-from="d3" data-to="d5" />
+                                <line x1="200" y1="260" x2="40" y2="180" class="edge" data-from="d4" data-to="d6" />
+                                <line x1="100" y1="260" x2="60" y2="90" class="edge" data-from="d5" data-to="d7" />
+                                <line x1="40" y1="180" x2="150" y2="40" class="edge" data-from="d6" data-to="d1" />
+                                <line x1="60" y1="90" x2="240" y2="90" class="edge" data-from="d7" data-to="d2" />
+                                <g class="no-hover" id="d1" data-node="d1">
+                                    <circle cx="150" cy="40" r="21" class="anel" />
+                                    <circle cx="150" cy="40" r="13" class="node" />
+                                </g>
+                                <g class="no-hover" id="d2" data-node="d2">
+                                    <circle cx="240" cy="90" r="21" class="anel" />
+                                    <circle cx="240" cy="90" r="13" class="node" />
+                                </g>
+                                <g class="no-hover" id="d3" data-node="d3">
+                                    <circle cx="260" cy="180" r="21" class="anel" />
+                                    <circle cx="260" cy="180" r="13" class="node" />
+                                </g>
+                                <g class="no-hover" id="d4" data-node="d4">
+                                    <circle cx="200" cy="260" r="21" class="anel" />
+                                    <circle cx="200" cy="260" r="13" class="node" />
+                                </g>
+                                <g class="no-hover" id="d5" data-node="d5">
+                                    <circle cx="100" cy="260" r="21" class="anel" />
+                                    <circle cx="100" cy="260" r="13" class="node" />
+                                </g>
+                                <g class="no-hover" id="d6" data-node="d6">
+                                    <circle cx="40" cy="180" r="21" class="anel" />
+                                    <circle cx="40" cy="180" r="13" class="node" />
+                                </g>
+                                <g class="no-hover" id="d7" data-node="d7">
+                                    <circle cx="60" cy="90" r="21" class="anel" />
+                                    <circle cx="60" cy="90" r="13" class="node" />
+                                </g>
+                            </svg>
+                            <p class="net-status" id="status-mesh">Funcionando: 9 de 9 nós ativos se comunicam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-important" class="three-section reveal">
+            <div class="container">
+                <div class="top-important">
+                    <h2>Por que o Bitcoin importa ?</h2>
+                    <p>Quatro características, todas escritas no próprio código, explicam por que ele virou uma das
+                        ideias mais discutidas do sistema financeiro.</p>
+                </div>
+
+                <div class="rows">
+                    <div class="row">
+                        <h3>Sem dono e sem ponto único de falha :</h3>
+                        <p>Nenhum banco, empresa ou governo pode mudar as regras sozinho. Qualquer alteração exige
+                            acordo entre as pessoas que rodam o software da rede, e não existe um servidor central que
+                            possa ser desligado para parar tudo.</p>
+                    </div>
+
+                    <div class="row">
+                        <h3>Oferta limitada a 21 milhões :</h3>
+                        <div>
+                            <p>O limite está no código e é conferido por todos os nós. Novas unidades entram em
+                                circulação num ritmo que cai pela metade a cada quatro anos, aproximadamente, e a última
+                                deve ser emitida por volta de 2140.</p>
+                            <div class="supply">
+                                <div class="supply-bar">
+                                    <div class="supply-fill"></div>
+                                </div>
+                                <div class="supply-scale">
+                                    <span>0</span>
+                                    <span>Mais de 95% já minerados</span>
+                                    <span>21 milhões</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <h3>Aberto a qualquer pessoa :</h3>
+                        <p>Basta ter internet e uma carteira. Não há abertura de conta, horário comercial nem
+                            autorização de terceiros para enviar valor a outra pessoa, seja na mesma rua ou em outro
+                            continente.</p>
+                    </div>
+
+                    <div class="row">
+                        <h3>Registro público e verificável :</h3>
+                        <p>Todas as transações ficam num livro-razão aberto, a blockchain. Qualquer pessoa pode
+                            auditar
+                            o histórico e checar se as regras estão sendo cumpridas, sem depender da palavra de
+                            ninguém.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="four-section reveal">
+            <div class="container">
+                <div class="how-it-works">
+                    <h2>Como funciona em três passos</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <h3>Você envia</h3>
+                            <p>Uma transação é assinada com a sua chave privada. Só quem tem a chave consegue gastar
+                                aquele
+                                saldo.</p>
+                        </div>
+
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <h3>A rede confere</h3>
+                            <p>Os nós verificam se a assinatura é válida e se o saldo existe. Mineradores reúnem as
+                                transações confirmadas em um bloco.</p>
+                        </div>
+
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <h3>O bloco entra na cadeia</h3>
+                            <p>Cada bloco aceito se liga ao anterior. Alterar o passado exigiria refazer o trabalho de
+                                todos
+                                os blocos seguintes, o que é inviável na prática.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="history" class="five-section reveal">
+            <div class="container">
+                <h2>De um artigo a uma rede global</h2>
+                <div class="history-layout">
+                    <ol class="timeline">
+                        <li class="timeline-item">
+                            <span class="timeline-year">2008</span>
+                            <p> Satoshi Nakamoto, pseudônimo de autoria desconhecida, publica o whitepaper que descreve
+                                um
+                                sistema de dinheiro eletrônico ponto a ponto.</p>
+                        </li>
+
+                        <li class="timeline-item">
+                            <span class="timeline-year">2009</span>
+                            <p> O primeiro bloco, chamado bloco gênese, é criado em janeiro e a rede começa a funcionar.
+                            </p>
+                        </li>
+
+
+                        <li class="timeline-item">
+                            <span class="timeline-year">2010</span>
+                            <p>Ocorre a primeira compra conhecida com Bitcoin: duas pizzas, pagas com 10 mil bitcoins.
+                            </p>
+                        </li>
+
+                        <li class="timeline-item">
+                            <span class="timeline-year">2021</span>
+                            <p>El Salvador se torna o primeiro país a adotar o Bitcoin como moeda de curso legal. A
+                                regra
+                                foi flexibilizada em 2025.</p>
+                        </li>
+                    </ol>
+
+                    <div class="history-side">
+                        <ol class="timeline timeline-compact">
+                            <li class="timeline-item">
+                                <span class="timeline-year">2024</span>
+                                <p>Fundos de Bitcoin negociados em bolsa nos Estados Unidos (ETFs à vista) são aprovados
+                                    em janeiro, e em abril acontece o quarto halving, que reduz à metade a emissão de
+                                    novas unidades.</p>
+                            </li>
+
+                            <li class="timeline-item">
+                                <span class="timeline-year">2025</span>
+                                <p>O Bitcoin atinge sua máxima histórica, ultrapassando US$ 126 mil em outubro,
+                                    consolidando o interesse institucional crescente.</p>
+                            </li>
+                        </ol>
+
+                        <div class="ath-card">
+                            <span class="ath-label">Máxima histórica</span>
+                            <span class="ath-value">US$ 126 mil</span>
+                            <span class="ath-date">6 de outubro de 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="Before-buying" class="six-section reveal">
+            <div class="container">
+                <div class="">
+                    <h2>O que considerar antes de comprar</h2>
+                    <p>Importância não significa ausência de risco. Três pontos merecem atenção.</p>
+                    <div class="steps">
+                        <div class="step">
+                            <h3>O preço oscila muito</h3>
+                            <p>O valor já caiu mais da metade em períodos curtos, mais de uma vez. Só coloque dinheiro
+                                que você pode ver flutuar sem precisar dele.</p>
+                        </div>
+
+                        <div class="step">
+                            <h3>Você guarda a própria chave</h3>
+                            <p>Sem intermediário, também não há suporte que recupere uma chave perdida ou roubada. A
+                                segurança da carteira é responsabilidade sua.</p>
+                        </div>
+
+                        <div class="step">
+                            <h3>Energia e regulação</h3>
+                            <p>A mineração consome bastante eletricidade, e isso é debatido. As regras sobre uso e
+                                tributação também mudam de país para país.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="source" class="closing reveal">
+            <div class="container">
+                <div class="box">
+                    <div>
+                        <h2>Comece pela fonte</h2>
+                        <p>O documento que deu origem a tudo tem poucas páginas e pode ser lido por qualquer pessoa
+                            curiosa.
+                            É um bom primeiro passo antes de qualquer decisão</p>
+                    </div>
+
+                    <div class="btn-group">
+                        <a class="btn-primary" href="#importancia">Volte à demonstração</a>
+                        <a class="btn-secondary" href="https://bitcoin.org/bitcoin.pdf" target="_blank"
+                            rel="noopener noreferrer">Abrir o whitpaper</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Conteúdo educativo. Não é recomendação de investimento. Faça sua própria pesquisa e, se precisar,
+                consulte um profissional qualificado.</p>
+
+            <div class="tech-stack">
+                <svg class="tech-icon" viewBox="0 0 24 24" aria-label="HTML5">
+                    <path fill="#8FA0B3"
+                        d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.618 10.059.003.23-2.587L5.412 4.547l.698 7.822h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z" />
+                </svg>
+
+                <svg class="tech-icon" viewBox="0 0 24 24" aria-label="CSS3">
+                    <path fill="#8FA0B3"
+                        d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.95-.81-.153-1.71h-2.64l.3 3.34L12 19.351l5.379-1.443L18.59 4.413z" />
+                </svg>
+
+                <svg class="tech-icon" viewBox="0 0 24 24" aria-label="JavaScript">
+                    <path fill="#8FA0B3"
+                        d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.166-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z" />
+                </svg>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
