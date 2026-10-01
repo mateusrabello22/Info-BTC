@@ -1,4 +1,5 @@
 # 🪙 Info BTC
+<br>
 <img src="./assets/preview.png" alt="Preview-do-projeto-Info-BTC" width="900">
 > Uma experiência web educativa sobre Bitcoin, descentralização e liberdade digital.
 
@@ -46,7 +47,8 @@ Durante o desenvolvimento do **Info BTC**, pude praticar e aprofundar conhecimen
 * Publicação de um projeto utilizando GitHub Pages
 
 ## 📱 Responsividade
-<img src="./assets/preview2.png" alt="Preview2-do-projeto-Info-BTC" width="900">
+<br>
+<img src="./assets/preview2.png" alt="Preview2-do-projeto-Info-BTC" width="250">
 O projeto foi desenvolvido pensando em diferentes tamanhos de tela, buscando manter uma boa experiência de navegação tanto em computadores quanto em dispositivos menores.
 
 ## 🌐 Projeto online
